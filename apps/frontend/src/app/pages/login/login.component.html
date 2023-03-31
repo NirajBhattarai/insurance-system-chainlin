@@ -6,6 +6,13 @@
         <button nbButton status="primary" (click)="connectMetaMask()">
           Connect with MetaMask
         </button>
+        <!-- <div *ngIf="!isConnected">
+          <p>Please connect your MetaMask wallet to proceed.</p>
+        </div>
+        <div *ngIf="isConnected">
+          <p>You are connected to MetaMask with address {{accountAddress}}.</p>
+          <button nbButton status="success" (click)="login()">Login</button>
+        </div> -->
       </nb-card-body>
     </nb-card>
   </nb-layout-column>
