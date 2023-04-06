@@ -7,12 +7,21 @@ import {
   NbButtonModule,
   NbCardModule,
   NbLayoutModule,
+  NbMenuModule,
+  NbSidebarService,
   NbThemeModule,
 } from '@nebular/theme';
 import { LoginComponent } from './pages/login/login.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomepageComponent,
+    HeaderComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,8 +29,9 @@ import { LoginComponent } from './pages/login/login.component';
     NbLayoutModule,
     NbCardModule,
     NbButtonModule,
+    NbMenuModule.forRoot(),
   ],
-  providers: [],
+  providers: [NbSidebarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

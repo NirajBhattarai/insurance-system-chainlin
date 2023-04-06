@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { NbThemeModule } from '@nebular/theme';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
 })
-export class AppComponent {
-  title = 'frontend';
-
+export class HeaderComponent {
   items: NbMenuItem[] = [
     { title: 'Home', link: '/' },
     { title: 'About Us', link: '/about' },
