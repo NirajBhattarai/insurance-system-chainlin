@@ -6,14 +6,17 @@ import { AppComponent } from './app.component';
 import {
   NbButtonModule,
   NbCardModule,
+  NbInputModule,
   NbLayoutModule,
   NbMenuModule,
   NbSidebarService,
+  NbStepperModule,
   NbThemeModule,
 } from '@nebular/theme';
 import { LoginComponent } from './pages/login/login.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     HomepageComponent,
     HeaderComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { HeaderComponent } from './header/header.component';
     NbCardModule,
     NbButtonModule,
     NbMenuModule.forRoot(),
+    NbStepperModule,
+    NbInputModule,
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],
