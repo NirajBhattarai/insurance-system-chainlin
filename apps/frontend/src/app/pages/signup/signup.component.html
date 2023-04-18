@@ -1,119 +1,90 @@
-<nb-card>
-  <nb-card-body>
-    <nb-stepper orientation="horizontal" #walletConnectStepper>
-      <nb-step [label]="labelOne">
-        <ng-template #labelOne>Connect Your Wallet</ng-template>
-        <h4>Connect Your Wallet</h4>
-        <p class="nb-paragraph">
-          In order to sign up and create an account on this platform, it is
-          necessary to connect a wallet. A wallet is a digital tool that allows
-          you to securely store, send, and receive cryptocurrencies. By
-          connecting your wallet to our platform, you will be able to easily
-          manage your digital assets and participate in various activities and
-          transactions within our ecosystem.
-        </p>
-        <!-- <button nbButton disabled nbStepperNext>prev</button>
-        <button nbButton nbStepperNext>next</button> -->
-        <button (click)="connectMetaMask(walletConnectStepper)" nbButton>
-          Connect To Metamask
-        </button>
-      </nb-step>
-      <nb-step [label]="labelTwo">
-        <nb-layout>
-          <nb-layout-column class="colored-column-basic">
-            <ng-template #labelTwo>Fill Form</ng-template>
-            <h4>SignUp Form</h4>
-            <nb-card>
-              <nb-card-body>
-                <form class="nb-form-group" class="step-container">
-                  <div class="nb-form-group">
-                    <label s for="firstName" class="nb-form-label"
-                      >First Name</label
-                    >
-                    <input
-                      nbInput
-                      type="text"
-                      id="firstName"
-                      class="nb-form-field"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div class="nb-form-group">
-                    <label for="lastName" class="nb-form-label"
-                      >Last Name</label
-                    >
-                    <input
-                      nbInput
-                      type="text"
-                      id="lastName"
-                      class="nb-form-field"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
-                  <div class="nb-form-group">
-                    <label for="email" class="nb-form-label"
-                      >Email Address</label
-                    >
-                    <input
-                      nbInput
-                      type="email"
-                      id="email"
-                      class="nb-form-field"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                  <div class="nb-form-group">
-                    <label for="password" class="nb-form-label">Password</label>
-                    <input
-                      nbInput
-                      type="password"
-                      id="password"
-                      class="nb-form-field"
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                  <div class="nb-form-group">
-                    <label for="confirmPassword" class="nb-form-label"
-                      >Confirm Password</label
-                    >
-                    <input
-                      nbInput
-                      type="password"
-                      id="confirmPassword"
-                      class="nb-form-field"
-                      placeholder="Confirm your password"
-                    />
-                  </div>
-                </form>
-              </nb-card-body>
-            </nb-card>
+<nb-layout>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-body>
+        <nb-stepper #stepper #walletConnectStepper>
+          <nb-step [label]="'Step 1'">
+            <h4>Connect Your Wallet</h4>
+            <p class="nb-paragraph">
+              In order to sign up and create an account on this platform, it is
+              necessary to connect a wallet. A wallet is a digital tool that
+              allows you to securely store, send, and receive cryptocurrencies.
+              By connecting your wallet to our platform, you will be able to
+              easily manage your digital assets and participate in various
+              activities and transactions within our ecosystem.
+            </p>
+            <button nbButton (click)="connectMetaMask(walletConnectStepper)">
+              Connect Wallet
+            </button>
+          </nb-step>
+          <nb-step [label]="'Step 2'">
+            <h4>Step 2</h4>
+            <p>Fill out the form</p>
+            <form>
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input
+                  nbInput
+                  id="firstName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your first name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input
+                  nbInput
+                  id="lastName"
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your last name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input
+                  nbInput
+                  id="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  nbInput
+                  id="password"
+                  type="password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input
+                  nbInput
+                  id="confirmPassword"
+                  type="password"
+                  class="form-control"
+                  placeholder="Confirm your password"
+                />
+              </div>
+            </form>
+            <button nbButton (click)="stepper.previous()">Previous</button>
+            <button nbButton (click)="stepper.next()">Next</button>
+          </nb-step>
+          <nb-step [label]="'Step 3'">
+            <h4>Step 3</h4>
+            <p>Confirmation</p>
+            <button nbButton (click)="stepper.previous()">Previous</button>
+            <!-- <button nbButton (click)="submitForm()">Submit</button> -->
+          </nb-step>
+        </nb-stepper>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
 
-            <button nbButton nbStepperPrevious>prev</button>
-            <button nbButton nbStepperNext>next</button>
-          </nb-layout-column>
-        </nb-layout>
-      </nb-step>
-      <nb-step label="Third step">
-        <h4>Step content #3</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it
-          down. Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle
-          crocodizzle shut the shizzle up, gravida vizzle, dang.
-        </p>
-        <button nbButton nbStepperPrevious>prev</button>
-        <button nbButton nbStepperNext>next</button>
-      </nb-step>
-      <nb-step [label]="labelFour">
-        <ng-template #labelFour>Fourth step</ng-template>
-        <h4>Step content #4</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it
-          down. Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle
-          crocodizzle shut the shizzle up, gravida vizzle, dang.
-        </p>
-        <button nbButton nbStepperPrevious>prev</button>
-        <button nbButton disabled nbStepperNext>next</button>
-      </nb-step>
-    </nb-stepper>
-  </nb-card-body>
-</nb-card>
+  <nb-layout-footer fixed>Footer</nb-layout-footer>
+</nb-layout>
