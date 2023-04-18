@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
+  NbActionsModule,
   NbButtonModule,
   NbCardModule,
   NbInputModule,
@@ -36,6 +37,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     NbMenuModule.forRoot(),
     NbStepperModule,
     NbInputModule,
+    NbActionsModule,
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],

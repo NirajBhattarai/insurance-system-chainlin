@@ -7,7 +7,7 @@ import { NbMenuItem } from '@nebular/theme';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Insurance System';
 
   items: NbMenuItem[] = [
     { title: 'Home', link: '/' },

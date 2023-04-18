@@ -1,16 +1,9 @@
-<header>
-  <div class="logo">
-    <a routerLink="/">Insurance Company</a>
+<nb-layout-header fixed>
+  <div class="header-content">
+    <a routerLink="/" class="header-name">ChainLink Insurance System</a>
+    <div class="button-container">
+      <button routerLink="/signup" nbButton status="basic">Sign Up</button>
+      <button routerLink="/login" nbButton status="primary">Sign In</button>
+    </div>
   </div>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About Us</a></li>
-      <li><a routerLink="/terms">Terms and Conditions</a></li>
-    </ul>
-  </nav>
-  <div class="buttons">
-    <button routerLink="/login" class="signin">Sign In</button>
-    <button routerLink="/signup" class="signup">Sign Up</button>
-  </div>
-</header>
+</nb-layout-header>
