@@ -18,68 +18,222 @@
             </button>
           </nb-step>
           <nb-step [label]="'Step 2'">
-            <h4>Step 2</h4>
-            <p>Fill out the form</p>
-            <form>
-              <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input
-                  nbInput
-                  id="firstName"
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your first name"
-                />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input
-                  nbInput
-                  id="lastName"
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your last name"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input
-                  nbInput
-                  id="email"
-                  type="email"
-                  class="form-control"
-                  placeholder="Enter your email address"
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Password:</label>
-                <input
-                  nbInput
-                  id="password"
-                  type="password"
-                  class="form-control"
-                  placeholder="Enter your password"
-                />
-              </div>
-              <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input
-                  nbInput
-                  id="confirmPassword"
-                  type="password"
-                  class="form-control"
-                  placeholder="Confirm your password"
-                />
-              </div>
-            </form>
+            <!-- <h4>Step 2</h4>
+            <p>Fill out the form</p> -->
+            <nb-card>
+              <nb-card-header>Insurance Signup Form</nb-card-header>
+              <nb-card-body>
+                <form (ngSubmit)="onSubmit()">
+                  <!-- <div class="row">
+                    <div class="col-10">
+                      <h5 class="py-2 font-weight-normal">System Access</h5>
+                    </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col form-group user-name__wrapper">
+                      <label class="required-field" for="user-name"
+                        >First Name</label
+                      >
+                      <input
+                        class="form-control"
+                        fullWidth
+                        id="user-name"
+                        nbInput
+                        placeholder="FirstName"
+                        type="text"
+                      />
+                      <!-- <small
+                        *ngIf="
+                          form.controls.username.hasError('required') &&
+                          form.controls.username.touched
+                        "
+                        class="form-text text-danger-color"
+                        i18n="@@userNameIsRequired"
+                      >
+                        User name is required
+                      </small> -->
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col form-group user-name__wrapper">
+                      <label class="required-field" for="user-name"
+                        >Last Name</label
+                      >
+                      <input
+                        class="form-control"
+                        fullWidth
+                        id="user-name"
+                        nbInput
+                        placeholder="LastName"
+                        type="text"
+                      />
+
+                      <div class="row">
+                        <div class="col form-group user-name__wrapper">
+                          <label class="required-field" for="user-name"
+                            >Email</label
+                          >
+                          <input
+                            class="form-control"
+                            fullWidth
+                            id="user-name"
+                            nbInput
+                            placeholder="Email"
+                            type="text"
+                          />
+                          <!-- <small
+                            *ngIf="
+                              form.controls.username.hasError('required') &&
+                              form.controls.username.touched
+                            "
+                            class="form-text text-danger-color"
+                            i18n="@@userNameIsRequired"
+                          >
+                            User name is required
+                          </small> -->
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col form-group user-name__wrapper">
+                          <label class="required-field" for="user-name"
+                            >Phone</label
+                          >
+                          <input
+                            class="form-control"
+                            fullWidth
+                            id="user-name"
+                            nbInput
+                            placeholder="Phone"
+                            type="text"
+                          />
+                          <!-- <small
+                            *ngIf="
+                              form.controls.username.hasError('required') &&
+                              form.controls.username.touched
+                            "
+                            class="form-text text-danger-color"
+                            i18n="@@userNameIsRequired"
+                          >
+                            User name is required
+                          </small> -->
+                        </div>
+                      </div>
+                      <!-- <small
+                        *ngIf="
+                          form.controls.username.hasError('required') &&
+                          form.controls.username.touched
+                        "
+                        class="form-text text-danger-color"
+                        i18n="@@userNameIsRequired"
+                      >
+                        User name is required
+                      </small> -->
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col form-group user-name__wrapper">
+                      <label class="required-field" for="user-name"
+                        >State</label
+                      >
+                      <input
+                        class="form-control"
+                        fullWidth
+                        id="user-name"
+                        nbInput
+                        placeholder="FirstName"
+                        type="text"
+                      />
+                      <!-- <small
+                        *ngIf="
+                          form.controls.username.hasError('required') &&
+                          form.controls.username.touched
+                        "
+                        class="form-text text-danger-color"
+                        i18n="@@userNameIsRequired"
+                      >
+                        User name is required
+                      </small> -->
+                    </div>
+                  </div>
+                </form>
+              </nb-card-body>
+            </nb-card>
+
             <button nbButton (click)="stepper.previous()">Previous</button>
             <button nbButton (click)="stepper.next()">Next</button>
           </nb-step>
           <nb-step [label]="'Step 3'">
-            <h4>Step 3</h4>
-            <p>Confirmation</p>
-            <button nbButton (click)="stepper.previous()">Previous</button>
-            <!-- <button nbButton (click)="submitForm()">Submit</button> -->
+            <div class="terms">
+              <h1>Terms and Conditions</h1>
+              <p>
+                By using our service, you agree to the following terms and
+                conditions:
+              </p>
+              <ol>
+                <li>
+                  Eligibility: You must meet the eligibility criteria outlined
+                  in our policies in order to use our service.
+                </li>
+                <li>
+                  Payment: You must pay the applicable fees to use our service,
+                  and failure to pay may result in termination of your account.
+                </li>
+                <li>
+                  Use of Service: You agree to use our service in accordance
+                  with our policies, and not to use the service for any illegal
+                  or unauthorized purpose.
+                </li>
+                <li>
+                  Intellectual Property: All intellectual property rights in our
+                  service are owned by us, and you agree not to reproduce,
+                  modify, or distribute any part of the service without our
+                  prior written consent.
+                </li>
+                <li>
+                  Disclaimer of Warranties: We provide the service "as is" and
+                  make no warranties, express or implied, regarding the service
+                  or its fitness for any particular purpose.
+                </li>
+                <li>
+                  Limitation of Liability: We will not be liable for any damages
+                  arising from your use of the service, including but not
+                  limited to direct, indirect, incidental, or consequential
+                  damages.
+                </li>
+                <li>
+                  Indemnification: You agree to indemnify and hold us harmless
+                  from any claims, damages, or expenses arising from your use of
+                  the service.
+                </li>
+                <li>
+                  Governing Law: These terms and conditions are governed by the
+                  laws of the jurisdiction in which we are located.
+                </li>
+              </ol>
+              <p>
+                By clicking "I Accept" below, you acknowledge that you have read
+                and agree to these terms and conditions. If you do not agree to
+                these terms and conditions, do not use our service.
+              </p>
+            </div>
+
+            <ng-template #acceptButton>
+              <button nbButton status="primary">I Accept</button>
+            </ng-template>
+
+            <div class="acceptance">
+              <nb-checkbox status="success" fullWidth>
+                <label>
+                  I have read and agree to the
+                  <a href="#" target="_blank">Terms and Conditions</a>.
+                </label>
+              </nb-checkbox>
+              <ng-container>
+                <button nbButton status="primary">I Accept</button>
+              </ng-container>
+            </div>
           </nb-step>
         </nb-stepper>
       </nb-card-body>

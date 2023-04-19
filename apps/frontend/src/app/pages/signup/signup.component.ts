@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NbStepperComponent } from '@nebular/theme';
 
 import Web3 from 'web3';
@@ -28,6 +29,30 @@ export class SignupComponent {
       }
     } else {
       console.error('MetaMask is not installed.');
+    }
+  }
+
+  insuranceForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.insuranceForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      zipCode: ['', Validators.required],
+      insuranceType: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    if (this.insuranceForm.valid) {
+      console.log('Form submitted:', this.insuranceForm.value);
     }
   }
 }

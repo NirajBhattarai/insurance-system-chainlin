@@ -7,6 +7,7 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbInputModule,
   NbLayoutModule,
   NbMenuModule,
@@ -19,6 +20,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     NbInputModule,
     NbActionsModule,
     NbSidebarModule,
+    NbInputModule,
+    FormsModule,
+    NbCheckboxModule,
   ],
   providers: [NbSidebarService],
   bootstrap: [AppComponent],
