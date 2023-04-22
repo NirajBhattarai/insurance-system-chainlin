@@ -142,7 +142,32 @@
                         fullWidth
                         id="user-name"
                         nbInput
-                        placeholder="FirstName"
+                        placeholder="State"
+                        type="text"
+                      />
+                      <!-- <small
+                        *ngIf="
+                          form.controls.username.hasError('required') &&
+                          form.controls.username.touched
+                        "
+                        class="form-text text-danger-color"
+                        i18n="@@userNameIsRequired"
+                      >
+                        User name is required
+                      </small> -->
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col form-group user-name__wrapper">
+                      <label class="required-field" for="user-name"
+                        >Country</label
+                      >
+                      <input
+                        class="form-control"
+                        fullWidth
+                        id="user-name"
+                        nbInput
+                        placeholder="Country"
                         type="text"
                       />
                       <!-- <small
@@ -218,10 +243,11 @@
                 these terms and conditions, do not use our service.
               </p>
             </div>
-
-            <ng-template #acceptButton>
-              <button nbButton status="primary">I Accept</button>
-            </ng-template>
+            <div>
+              <ng-template #acceptButton>
+                <button nbButton status="primary">I Accept</button>
+              </ng-template>
+            </div>
 
             <div class="acceptance">
               <nb-checkbox status="success" fullWidth>
@@ -230,15 +256,17 @@
                   <a href="#" target="_blank">Terms and Conditions</a>.
                 </label>
               </nb-checkbox>
-              <ng-container>
-                <button nbButton status="primary">I Accept</button>
-              </ng-container>
+              <div>
+                <ng-container>
+                  <button (click)="onSubmit()" nbButton status="primary">
+                    I Accept
+                  </button>
+                </ng-container>
+              </div>
             </div>
           </nb-step>
         </nb-stepper>
       </nb-card-body>
     </nb-card>
   </nb-layout-column>
-
-  <nb-layout-footer fixed>Footer</nb-layout-footer>
 </nb-layout>

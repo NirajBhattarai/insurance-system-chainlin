@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NbStepperComponent } from '@nebular/theme';
 
 import Web3 from 'web3';
@@ -34,7 +35,7 @@ export class SignupComponent {
 
   insuranceForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.insuranceForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -51,6 +52,7 @@ export class SignupComponent {
   ngOnInit(): void {}
 
   onSubmit() {
+    this.router.navigate(['/dashboard']);
     if (this.insuranceForm.valid) {
       console.log('Form submitted:', this.insuranceForm.value);
     }

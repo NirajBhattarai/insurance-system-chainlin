@@ -21,6 +21,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     HomepageComponent,
     HeaderComponent,
     SignupComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
